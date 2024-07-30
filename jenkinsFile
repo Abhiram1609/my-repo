@@ -1,6 +1,6 @@
 pipeline {
 agent any
- stages {
+stages {
   stage('Create build output') {
    steps {
     script {
@@ -19,10 +19,10 @@ agent any
      archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
      }
    }
-stage('Archive build output - 2') {
+  stage('input build') {
     steps {
-    // Archive the build output artifacts.
-     archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
+    // input build output artifacts.
+     input message: 'Continue ?', ok: 'OK'
      }
    }
   }
