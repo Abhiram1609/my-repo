@@ -19,5 +19,11 @@ agent any
      archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
      }
    }
+stage('Archive build output - 2') {
+    steps {
+    // Archive the build output artifacts.
+     archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
+     }
+   }
   }
 }
